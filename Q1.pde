@@ -27,7 +27,9 @@ void Q1() {
     // 回答したら
     if (millis() / 1000 - lapseAnswered > 2) {
       // 回答して2秒経過したら
-      scene = 2; // 結果画面へ移動
+      isAnswered = false; // 未回答に戻す　
+      isCorrect = false; // 誤答に戻す
+      quizNum = 2; // クイズ2へ
     } else {
       // 正誤を表示
       noFill(); // 塗りつぶさない
