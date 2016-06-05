@@ -30,6 +30,10 @@ void Q1() {
       scene = 2; // 結果画面へ移動
     } else {
       // 正誤を表示
+      noFill(); // 塗りつぶさない
+      stroke(255, 0, 0); // 線を赤で
+      strokeWeight(10); // 線の太さを10に
+
       if (isCorrect == true) {
         // マルの表示
         ellipse(width / 2, height / 2, 0.8 * width, 0.8 * height);
