@@ -25,10 +25,19 @@ void Q1() {
     }
   } else if (isAnswered == true) {
     // 回答したら
-    scene = 2; // 結果画面へ移動
     if (millis() / 1000 - lapseAnswered > 2) {
       // 回答して2秒経過したら
       scene = 2; // 結果画面へ移動
+    } else {
+      // 正誤を表示
+      if (isCorrect == true) {
+        // マルの表示
+        ellipse(width / 2, height / 2, 0.8 * width, 0.8 * height);
+      } else {
+        // バツの表示
+        line(0.1 * width, 0.1 * height, 0.9 * width, 0.9 * height);
+        line(0.1 * width, 0.9 * height, 0.9 * width, 0.1 * height);
+      }
     }
   }
 }
