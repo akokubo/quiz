@@ -26,5 +26,9 @@ void Q1() {
   } else if (isAnswered == true) {
     // 回答したら
     scene = 2; // 結果画面へ移動
+    if (millis() / 1000 - lapseAnswered > 2) {
+      // 回答して2秒経過したら
+      scene = 2; // 結果画面へ移動
+    }
   }
 }
