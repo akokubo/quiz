@@ -4,7 +4,7 @@ void result() {
   textAlign(CENTER, CENTER); // 文字列を上下左右中央揃え
 
   textFont(font36);
-  text("正解数:", 40, 40, 240, 80);
+  text("正解数:" + score, 40, 40, 240, 80);
 
   textFont(font18);
   text("マウスをクリックして再挑戦", 40, 140, 240, 40);

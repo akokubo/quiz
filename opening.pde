@@ -12,5 +12,6 @@ void opening() {
   if (mousePressed == true) {
     // マウスをクリックしたら
     scene = 1; // プレイ画面へ移動
+    score = 0; // 正解数を0に
   }
 }
