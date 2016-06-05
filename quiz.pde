@@ -1,5 +1,6 @@
 int scene; // シーン番号
 int score; // 正解数
+int quizNum; // クイズ番号
 
 PFont font18; // 18ピクセルのフォント
 PFont font36; // 36ピクセルのフォント
