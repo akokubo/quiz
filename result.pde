@@ -8,9 +8,12 @@ void result() {
 
   textFont(font18);
   text("マウスをクリックして再挑戦", 40, 140, 240, 40);
+  text("xキーを押して終了", 40, 220, 240, 40);
 
   if (mousePressed == true) {
     // マウスをクリックしたら
     scene = 0; // 開始画面へ移動
+  } else if (keyPressed == true && key == 'x') {
+    exit();
   }
 }
