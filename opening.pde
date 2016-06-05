@@ -14,5 +14,7 @@ void opening() {
     scene = 1; // プレイ画面へ移動
     score = 0; // 正解数を0に
     quizNum = 1; // クイズ番号を1に
+    isAnswered = false; // 未回答に
+    isCorrect = false; // 誤答に
   }
 }

@@ -1,6 +1,9 @@
 int scene; // シーン番号
 int score; // 正解数
 int quizNum; // クイズ番号
+boolean isAnswered; // 回答したか
+boolean isCorrect; // 正解か
+float lapseAnswered; // 回答時経過時間
 
 PFont font18; // 18ピクセルのフォント
 PFont font36; // 36ピクセルのフォント
