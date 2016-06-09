@@ -12,19 +12,22 @@ void Q1() {
   text("2: チョキ", 80, 180, 160, 40);
   text("3: パー", 80, 240, 160, 40);
 
-  if (isAnswered == false && keyPressed == true) {
-    // 未回答時にキーを押したら
-    isAnswered = true; // 回答した
-    lapseAnswered = millis() / 1000; // 回答時経過時間を記録
-    if (key == answer) {
-      // 正解だったら
-      score++; // 正解数を増やす
-      isCorrect = true; // 正解した
-    } else {
-      isCorrect = false; // 間違えた
+  if (isAnswered == false) {
+    // 回答待ち
+    if (keyPressed == true) {
+      // 回答したら
+      isAnswered = true; // 回答した
+      lapseAnswered = millis() / 1000; // 回答時経過時間を記録
+      if (key == answer) {
+        // 正解だったら
+        score++; // 正解数を増やす
+        isCorrect = true; // 正解した
+      } else {
+        isCorrect = false; // 間違えた
+      }
     }
-  } else if (isAnswered == true) {
-    // 回答したら
+  } else {
+    // 結果表示
     if (millis() / 1000 - lapseAnswered > 2) {
       // 回答して2秒経過したら
       isAnswered = false; // 未回答に戻す　
