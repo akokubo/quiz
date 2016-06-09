@@ -45,7 +45,7 @@ void Q2() {
       isAnswered = false; // 未回答に戻す　
       isCorrect = false; // 誤答に戻す
       lapseDisplayed = millis() / 1000; // 問題表示開始時間を記録
-      quizNum = 2; // クイズ2へ
+      scene = 2; // 結果画面へ
     } else {
       // 正誤を表示
       noFill(); // 塗りつぶさない
