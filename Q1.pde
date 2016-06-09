@@ -29,6 +29,9 @@ void Q1() {
     
     // 制限時間
     float timeLimit = 5 - (millis() / 1000 - lapseDisplayed);
+    textAlign(RIGHT, CENTER); // 文字列を右揃え
+    text("残り時間: " + timeLimit, 310, 15);
+    
     if (timeLimit < 0) {
       // 回答制限時間を超えたら
       isAnswered = true; // 回答したことにする
