@@ -26,6 +26,15 @@ void Q1() {
         isCorrect = false; // 間違えた
       }
     }
+    
+    // 制限時間
+    float timeLimit = 5 - (millis() / 1000 - lapseDisplayed);
+    if (timeLimit < 0) {
+      // 回答制限時間を超えたら
+      isAnswered = true; // 回答したことにする
+      lapseAnswered = millis() / 1000; // 回答時経過時間を記録 
+      isCorrect = false; // 間違えたことにする
+    }
   } else {
     // 結果表示
     if (millis() / 1000 - lapseAnswered > 2) {
