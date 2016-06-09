@@ -44,6 +44,7 @@ void Q1() {
       // 回答して2秒経過したら
       isAnswered = false; // 未回答に戻す　
       isCorrect = false; // 誤答に戻す
+      lapseDisplayed = millis() / 1000; // 問題表示開始時間を記録
       quizNum = 2; // クイズ2へ
     } else {
       // 正誤を表示
