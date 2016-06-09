@@ -16,5 +16,6 @@ void opening() {
     quizNum = 1; // クイズ番号を1に
     isAnswered = false; // 未回答に
     isCorrect = false; // 誤答に
+    lapseDisplayed = millis() / 1000; // 問題表示開始時間を記録
   }
 }

@@ -4,6 +4,7 @@ int quizNum; // クイズ番号
 boolean isAnswered; // 回答したか
 boolean isCorrect; // 正解か
 float lapseAnswered; // 回答時経過時間
+float lapseDisplayed; // 問題を表示しはじめたときの経過時間
 
 PFont font18; // 18ピクセルのフォント
 PFont font36; // 36ピクセルのフォント
