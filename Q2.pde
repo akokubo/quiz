@@ -12,22 +12,40 @@ void Q2() {
   text("2: 玉手箱", 80, 180, 160, 40);
   text("3: 蓬莱の玉の枝", 80, 240, 160, 40);
 
-  if (isAnswered == false && keyPressed == true) {
-    // 未回答時にキーを押したら
-    isAnswered = true; // 回答した
-    lapseAnswered = millis() / 1000; // 回答時経過時間を記録
-    if (key == answer) {
-      // 正解だったら
-      score++; // 正解数を増やす
-      isCorrect = true; // 正解した
-    } else {
-      isCorrect = false; // 間違えた
+  if (isAnswered == false) {
+    // 回答待ち
+    if (keyPressed == true) {
+      // 回答したら
+      isAnswered = true; // 回答した
+      lapseAnswered = millis() / 1000; // 回答時経過時間を記録
+      if (key == answer) {
+        // 正解だったら
+        score++; // 正解数を増やす
+        isCorrect = true; // 正解した
+      } else {
+        isCorrect = false; // 間違えた
+      }
     }
-  } else if (isAnswered == true) {
-    // 回答したら
+    
+    // 制限時間
+    float timeLimit = 5 - (millis() / 1000 - lapseDisplayed);
+    textAlign(RIGHT, CENTER); // 文字列を右揃え
+    text("残り時間: " + timeLimit, 310, 15);
+    
+    if (timeLimit < 0) {
+      // 回答制限時間を超えたら
+      isAnswered = true; // 回答したことにする
+      lapseAnswered = millis() / 1000; // 回答時経過時間を記録 
+      isCorrect = false; // 間違えたことにする
+    }
+  } else {
+    // 結果表示
     if (millis() / 1000 - lapseAnswered > 2) {
       // 回答して2秒経過したら
-      scene = 2; // 結果画面へ移動
+      isAnswered = false; // 未回答に戻す　
+      isCorrect = false; // 誤答に戻す
+      lapseDisplayed = millis() / 1000; // 問題表示開始時間を記録
+      quizNum = 2; // クイズ2へ
     } else {
       // 正誤を表示
       noFill(); // 塗りつぶさない
